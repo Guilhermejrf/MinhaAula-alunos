@@ -19,17 +19,3 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // 4. Função de Cadastro (Usando window. para o HTML enxergar)
-window.cadastrarComEmail = function() {
-        // Pegar os valores que o usuário digitou
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-        //O que vai enviar para o Firebase criar a conta
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            alert("Sucesso! Usuário: " + userCredential.user.email);
-        })
-        .catch((error) => {
-            alert("Erro: " + error.message);
-        });
-};
